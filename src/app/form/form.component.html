@@ -1,0 +1,14 @@
+<p>Correct Format YYYY-MM-DD</p>
+<form [formGroup]="heroForm" (submit)="submit()">
+	<div class="form-group">
+		<label class="center-block">Date:
+      <input type="date"  class="form-control form-control-alternative" formControlName="date">
+      <input type="text" class="form-control" formControlName="nombre">
+      <input type="text" class="form-control" formControlName="apellido">
+    </label>
+	</div>
+	<p>Form value: {{ heroForm.value | json }}</p>
+	<!-- <p *ngIf="heroForm.get('date').hasError('required')">Required Error</p>
+	<p *ngIf="heroForm.get('date').hasError('dateVaidator')">Date Error</p> -->
+	<button type="submit" [disabled]="heroForm.invalid" >submit</button>
+</form>
